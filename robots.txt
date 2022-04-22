@@ -1,1 +1,1 @@
-Sitemap: https://hi.prakashn.com/sitemap.xml
+Sitemap: https://fastpages.fast.ai/sitemap.xml
