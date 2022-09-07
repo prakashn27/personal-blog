@@ -7,6 +7,7 @@ title: DynamoDB Quick Reference
 ---
 
 ## Scalar Data Types
+
 |Type|Symbol|Description|JSON Example|
 |-|-|-|-|
 | String | S  |  typical string | `"S": "this is a string" ` | 
