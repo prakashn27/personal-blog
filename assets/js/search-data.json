@@ -1,11 +1,22 @@
 {
   
+    
+        "post0": {
+            "title": "DynamoDB Quick Reference",
+            "content": "DynamoDB . Data Types . | Type | Symbol | Description | JSON Example | |—|—|—|—| | String | S | typical string | “S”: “this is a string” | | Number | N | Any int or float | “N”: “98”, “N”:”3.141592” | | Binary | B | Base64 encoded binary data | “B”: “nwaafrafs” | | Boolean | BOOL | true or false | “BOOL”: false | | Null | NULL | use for missing values | “NULL”: true | .",
+            "url": "https://prakashn27.github.io/personal-blog/db/aws/2022/08/07/DynamoDB-Quick-Reference.html",
+            "relUrl": "/db/aws/2022/08/07/DynamoDB-Quick-Reference.html",
+            "date": " • Aug 7, 2022"
+        }
+        
+    
+  
 
   
   
 
   
-      "page1": {
+      ,"page1": {
           "title": "About Me",
           "content": "Hi I am Prakash Natarajan 🙂 . I enjoy architecting software systems. 👨‍💻 . This website contains my notes from various sources I find interesting in internet. 📓 . I approach the problem for solving it by best possible method rather than inserting a specific technology for my clients. 🧰 . Please reach out to me at 📨 mail@prakashn.com if you need any assistance with your software needs. 💚 . Take care. 👋 .",
           "url": "https://prakashn27.github.io/personal-blog/about/",
