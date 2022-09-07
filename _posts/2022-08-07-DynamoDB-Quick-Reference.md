@@ -1,11 +1,10 @@
 ---
 toc: true
 layout: post
-description: DynamoDB Quick Reference.
-categories: [db, aws]
+description: Notes on Dynamo DB from AWS, NoSQL DB..
+categories: [db, aws, nosql]
 title: DynamoDB Quick Reference
 ---
-# DynamoDB
 
 ## Scalar Data Types
 |Type|Symbol|Description|JSON Example|
