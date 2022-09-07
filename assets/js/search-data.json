@@ -4,7 +4,7 @@
         "post0": {
             "title": "DynamoDB Quick Reference",
             "content": "Scalar Data Types . Type Symbol Description JSON Example . String | S | typical string | &quot;S&quot;: &quot;this is a string&quot; | . Number | N | Any int or float | &quot;N&quot;: &quot;98&quot;, &quot;N&quot;:&quot;3.141592&quot; | . Binary | B | Base64 encoded binary data | &quot;B&quot;: &quot;nwaafrafs&quot; | . Boolean | BOOL | true or false | &quot;BOOL&quot;: false | . Null | NULL | use for missing values | &quot;NULL&quot;: true | . Set and Document Data Types . Type Symbol Description JSON Example . String Set | SS | Set of string | “SS”: [“Prakash”, “Natarajan”] | . Number Set | NS | Set of numbers | “NS”: [“1”, “2”] | . Binary Set | BS | Set of Binary | “BS”: [“wsfawefa===”] | . List | L | List that can consist of any scalar type | “L” : [{“S”:”prakash”},{“N”:”1”}] | . Map | M | key-value store with string as keys and any scalar as value | “M”:{“key”:{“S”:”value”}} | . Key Types . 1) Partition key (hash key) 2) Composite pKey (partition key + Sort key) . Indexes . Local Secondary Index . same (partition) hash key, different sort key. | need to be created at table creation | . Global Secondary Index: . Any column. | can be created and deleted anytime. | Pay for storage for that index. | .",
-            "url": "https://prakashn27.github.io/personal-blog/db/aws/nosql/2022/08/07/DynamoDB-Quick-Reference.html",
+            "url": "https://www.prakashn.com/db/aws/nosql/2022/08/07/DynamoDB-Quick-Reference.html",
             "relUrl": "/db/aws/nosql/2022/08/07/DynamoDB-Quick-Reference.html",
             "date": " • Aug 7, 2022"
         }
@@ -19,7 +19,7 @@
       ,"page1": {
           "title": "About Me",
           "content": "👋 Hi, I am Prakash Natarajan 🙂 . I enjoy architecting software systems. 👨‍💻 . I am interested in building highly available, scalable, maintainable software for my clients. I typically select and use best tool for the job rather than going with something generic. 🧰 . This website contains my notes from various sources I find interesting in internet. 📓 . Please reach out to me at 📨 mail@prakashn.com if you need any assistance with your software needs. 💚 . Take care. 👋 .",
-          "url": "https://prakashn27.github.io/personal-blog/about/",
+          "url": "https://www.prakashn.com/about/",
           "relUrl": "/about/",
           "date": ""
       }
@@ -51,7 +51,7 @@
       ,"page10": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
-          "url": "https://prakashn27.github.io/personal-blog/robots.txt",
+          "url": "https://www.prakashn.com/robots.txt",
           "relUrl": "/robots.txt",
           "date": ""
       }

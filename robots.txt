@@ -1,1 +1,1 @@
-Sitemap: https://prakashn27.github.io/personal-blog/sitemap.xml
+Sitemap: https://www.prakashn.com/sitemap.xml
