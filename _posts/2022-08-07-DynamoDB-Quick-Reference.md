@@ -49,14 +49,14 @@ comments: true
 1) Partition key (hash key)       
 2) Composite Key (partition key + Sort key)         
 
-## Indexes
+# Indexes
 
-### Local Secondary Index
+## Local Secondary Index
 * same (partition) hash key, different sort key.   
 * need to be created at table creation   
 
 
-### Global Secondary Index:
+## Global Secondary Index:
 * Any column.
 * can be created and deleted anytime.
 * Pay for storage for that index.
