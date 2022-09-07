@@ -19,6 +19,7 @@ comments: true
 * ✅ Main Differentiator: Highly Available
 * ❌ Query-ability : table needs to be designed based on access pattern, as it gets difficult to change in the end.
 * [AWS:aws.amazon.com/­dynamodb](https://aws.amazon.com/­dynamodb)
+* [Db-engines link](https://db-engines.com/en/system/Amazon%20DynamoDB)
 
 
 # Data Types
