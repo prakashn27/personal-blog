@@ -10,14 +10,13 @@ permalink: /about/
 
 [^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats. -->
 
-
-Hi I am Prakash Natarajan 🙂 
+👋 Hi, I am Prakash Natarajan 🙂 
 
 I enjoy architecting software systems. 👨‍💻
 
-This website contains my notes from various sources I find interesting in internet. 📓
+I am interested in <b>building highly available, scalable, maintainable software</b> for my clients. I typically select and use best tool for the job rather than going with something generic. 🧰
 
-I approach the problem for solving it by best possible method rather than inserting a specific technology for my clients. 🧰
+This website contains my notes from various sources I find interesting in internet. 📓
 
 Please reach out to me at [📨 mail@prakashn.com](mailto:mail@prakashn.com) if you need any assistance with your software needs. 💚
 
