@@ -25,3 +25,9 @@ title: DynamoDB Quick Reference
 | Binary Set | BS | Set of Binary  | "BS": ["wsfawefa==="] |
 | List | L | List that can consist of any scalar type  | "L" : [{"S":"prakash"},{"N":"1"}]|
 | Map | M | key-value store with string as keys and any scalar as value  | "M":{"key":{"S":"value"}}| 
+
+
+## Key Types
+
+1) Partition key (hash key)
+2) Composite pKey (partition key + Sort key)
