@@ -6,8 +6,8 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 
-title: prakash
-description: personal blog website.
+title: Prakash Natarajan
+description: Prakash Natarajan's rough note
 github_username: prakashn27
 
 # you can comment the below line out if your repo name is not different than your baseurl
@@ -35,7 +35,7 @@ url: "https://prakashn27.github.io" # the base hostname & protocol for your site
 #
 # 3. You must replace the parameter `baseurl` in _action_files/settings.ini with the same value as you set here but WITHOUT QUOTES.
 #
-baseurl: "/personal-blog" # the subpath of your site, e.g. "/blog".
+baseurl: "/blog" # the subpath of your site, e.g. "/blog".
 
 # Github and twitter are optional:
 minima:
