@@ -108,12 +108,12 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#scalar-data-types">Scalar Data Types</a></li>
 <li class="toc-entry toc-h2"><a href="#set-and-document-data-types">Set and Document Data Types</a></li>
 <li class="toc-entry toc-h2"><a href="#key-types">Key Types</a></li>
-<li class="toc-entry toc-h2"><a href="#indexes">Indexes</a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#local-secondary-index">Local Secondary Index</a></li>
-<li class="toc-entry toc-h3"><a href="#global-secondary-index">Global Secondary Index:</a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h1"><a href="#indexes">Indexes</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#local-secondary-index">Local Secondary Index</a></li>
+<li class="toc-entry toc-h2"><a href="#global-secondary-index">Global Secondary Index:</a></li>
 </ul>
 </li>
 </ul><h2 id="intro">
@@ -232,18 +232,18 @@ window.onload = wrap_img;
 <p>1) Partition key (hash key)     <br>
 2) Composite Key (partition key + Sort key)</p>
 
-<h2 id="indexes">
-<a class="anchor" href="#indexes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Indexes</h2>
+<h1 id="indexes">
+<a class="anchor" href="#indexes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Indexes</h1>
 
-<h3 id="local-secondary-index">
-<a class="anchor" href="#local-secondary-index" aria-hidden="true"><span class="octicon octicon-link"></span></a>Local Secondary Index</h3>
+<h2 id="local-secondary-index">
+<a class="anchor" href="#local-secondary-index" aria-hidden="true"><span class="octicon octicon-link"></span></a>Local Secondary Index</h2>
 <ul>
   <li>same (partition) hash key, different sort key.</li>
   <li>need to be created at table creation</li>
 </ul>
 
-<h3 id="global-secondary-index">
-<a class="anchor" href="#global-secondary-index" aria-hidden="true"><span class="octicon octicon-link"></span></a>Global Secondary Index:</h3>
+<h2 id="global-secondary-index">
+<a class="anchor" href="#global-secondary-index" aria-hidden="true"><span class="octicon octicon-link"></span></a>Global Secondary Index:</h2>
 <ul>
   <li>Any column.</li>
   <li>can be created and deleted anytime.</li>
