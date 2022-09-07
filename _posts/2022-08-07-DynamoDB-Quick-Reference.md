@@ -1,11 +1,27 @@
 ---
 toc: true
 layout: post
-description: Notes on Dynamo DB from AWS, NoSQL DB..
+description: Notes on Dynamo DB from AWS
 categories: [db, aws, nosql]
 title: DynamoDB Quick Reference
+comments: true
 ---
 
+## Intro
+* Hosted, scalable database service by Amazon with the data stored in Amazons cloud.
+* Infinitely scalable, with minimal provisioning.
+* Managed, closed source DB.
+* Key-value, schema less DB.
+* ACID complaint.
+* Replication: Peer-based, master-master replication (though it is managed by AWS)
+* Concurrency: Vector Clocks
+* Sharding: Yes
+* ✅ Main Differentiator: Highly Available
+* ❌ Query-ability : table needs to be designed based on access pattern, as it gets difficult to change in the end.
+* [AWS:aws.amazon.com/­dynamodb](https://aws.amazon.com/­dynamodb)
+
+
+# Data Types
 ## Scalar Data Types
 
 |Type|Symbol|Description|JSON Example|
@@ -31,7 +47,7 @@ title: DynamoDB Quick Reference
 ## Key Types
 
 1) Partition key (hash key)       
-2) Composite pKey (partition key + Sort key)         
+2) Composite Key (partition key + Sort key)         
 
 ## Indexes
 
