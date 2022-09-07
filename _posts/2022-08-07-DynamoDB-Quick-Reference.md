@@ -31,3 +31,17 @@ title: DynamoDB Quick Reference
 
 1) Partition key (hash key)
 2) Composite pKey (partition key + Sort key)
+
+## Indexes
+
+### Local Secondary Index
+* same (partition) hash key, different sort key.
+* need to be created at table creation
+
+
+### Global Secondary Index:
+* Any column.
+* can be created and deleted anytime.
+* Pay for storage for that index.
+
+
