@@ -112,23 +112,111 @@ window.onload = wrap_img;
 <a class="anchor" href="#collections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Collections</h1>
 <h2 id="cheat-sheet">
 <a class="anchor" href="#cheat-sheet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cheat Sheet</h2>
-<p>|OPERATION | VEC | DICT	| KEYSET |
-|-|-|-|-|
-|Initialize empty	|$v = vec[];|	$d = dict[];	|$k = keyset[];|
-|Literal|	$v = vec[1, 2, 3];	|$d = dict[‘foo’ =&gt; 1];	|$k = keyset[‘foo’, ‘bar’];|
-|From Another Container<em>|	$v = vec($container);	|$d = dict($keyed_container);	|$k = keyset($container); |
-|Keys from Container</em>	|$v = Vec\keys($container);|	N/A	|$k = Keyset\keys($container);|
-|Add Elements	|$v[] = 4;	|$d[‘baz’] = 2;	|$k[] = ‘baz’;|
-|Bulk Add Elements|	$v = Vec\concat($t1, $t2)|	$d = Dict\merge($kt1, $kt2)	|$k = Keyset\union($t1, $t2)|
-|Remove Elements|	Remove-at-index is unsupported; Vec\drop($v,$n), Vec\take($v,$n); $first=C\pop_front(inout $x), $last=C\pop_back(inout $x)	| unset($d[‘baz’]);	| unset($k[‘baz’]); |
-|Key Existence	| C\contains_key($v, 1)| 	C\contains_key($d, ‘foo’)	| C\contains_key($k, ‘foo’)|
-|Value Existence |	C\contains($v, 3) |	C\contains($d, 2)	| Use C\contains_key($k, ‘foo’) |
-|Equality (Order-Dependent)|	$v1 === $v2	|$d1 === $d2	|$k1 === $k2|
-|Equality (Order-Independent)	|N/A	|Dict\equal($d1, $d2)|	Keyset\equal($k1, $k2)|
-|Count Elements (i.e., length, size of array)|	C\count($v)	|C\count($d)|	C\count($k)|
-|Type Signature	|vec<tv>	|dict&lt;Tk, Tv&gt;	|keyset<tk>|
-|Type Refinement	|$v is vec&lt;_&gt;	|$d is dict&lt;_, _&gt;	|$k is keyset&lt;_&gt;|
-|Awaitable Consolidation|	Vec\from_async($v)|	Dict\from_async($d)|	Keyset\from_async($x)|</tk></tv></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>OPERATION</th>
+      <th>VEC</th>
+      <th>DICT</th>
+      <th>KEYSET</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Initialize empty</td>
+      <td>$v = vec[];</td>
+      <td>$d = dict[];</td>
+      <td>$k = keyset[];</td>
+    </tr>
+    <tr>
+      <td>Literal</td>
+      <td>$v = vec[1, 2, 3];</td>
+      <td>$d = dict[‘foo’ =&gt; 1];</td>
+      <td>$k = keyset[‘foo’, ‘bar’];</td>
+    </tr>
+    <tr>
+      <td>From Another Container*</td>
+      <td>$v = vec($container);</td>
+      <td>$d = dict($keyed_container);</td>
+      <td>$k = keyset($container);</td>
+    </tr>
+    <tr>
+      <td>Keys from Container*</td>
+      <td>$v = Vec\keys($container);</td>
+      <td>N/A</td>
+      <td>$k = Keyset\keys($container);</td>
+    </tr>
+    <tr>
+      <td>Add Elements</td>
+      <td>$v[] = 4;</td>
+      <td>$d[‘baz’] = 2;</td>
+      <td>$k[] = ‘baz’;</td>
+    </tr>
+    <tr>
+      <td>Bulk Add Elements</td>
+      <td>$v = Vec\concat($t1, $t2)</td>
+      <td>$d = Dict\merge($kt1, $kt2)</td>
+      <td>$k = Keyset\union($t1, $t2)</td>
+    </tr>
+    <tr>
+      <td>Remove Elements</td>
+      <td>Remove-at-index is unsupported; Vec\drop($v,$n), Vec\take($v,$n); $first=C\pop_front(inout $x), $last=C\pop_back(inout $x)</td>
+      <td>unset($d[‘baz’]);</td>
+      <td>unset($k[‘baz’]);</td>
+    </tr>
+    <tr>
+      <td>Key Existence</td>
+      <td>C\contains_key($v, 1)</td>
+      <td>C\contains_key($d, ‘foo’)</td>
+      <td>C\contains_key($k, ‘foo’)</td>
+    </tr>
+    <tr>
+      <td>Value Existence</td>
+      <td>C\contains($v, 3)</td>
+      <td>C\contains($d, 2)</td>
+      <td>Use C\contains_key($k, ‘foo’)</td>
+    </tr>
+    <tr>
+      <td>Equality (Order-Dependent)</td>
+      <td>$v1 === $v2</td>
+      <td>$d1 === $d2</td>
+      <td>$k1 === $k2</td>
+    </tr>
+    <tr>
+      <td>Equality (Order-Independent)</td>
+      <td>N/A</td>
+      <td>Dict\equal($d1, $d2)</td>
+      <td>Keyset\equal($k1, $k2)</td>
+    </tr>
+    <tr>
+      <td>Count Elements (i.e., length, size of array)</td>
+      <td>C\count($v)</td>
+      <td>C\count($d)</td>
+      <td>C\count($k)</td>
+    </tr>
+    <tr>
+      <td>Type Signature</td>
+      <td>vec<tv></tv>
+</td>
+      <td>dict&lt;Tk, Tv&gt;</td>
+      <td>keyset<tk></tk>
+</td>
+    </tr>
+    <tr>
+      <td>Type Refinement</td>
+      <td>$v is vec&lt;_&gt;</td>
+      <td>$d is dict&lt;_, _&gt;</td>
+      <td>$k is keyset&lt;_&gt;</td>
+    </tr>
+    <tr>
+      <td>Awaitable Consolidation</td>
+      <td>Vec\from_async($v)</td>
+      <td>Dict\from_async($d)</td>
+      <td>Keyset\from_async($x)</td>
+    </tr>
+  </tbody>
+</table>
 
 <h1 id="types">
 <a class="anchor" href="#types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Types</h1>
@@ -209,7 +297,6 @@ window.onload = wrap_img;
 <span class="p">}</span>
 </code></pre></div></div>
 <p>we have a class-specific type constant that is an alias, which allows a value of type T2 to be used in any context an arraykey is expected. After all, any int value is also an arraykey value.</p>
-
 
   </div><a class="u-url" href="/hacklang/2022/08/08/Hack-Lang.html" hidden></a>
 </article>
