@@ -100,6 +100,7 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h2"><a href="#generic-types">Generic Types:</a></li>
 <li class="toc-entry toc-h2"><a href="#nullable-types">Nullable Types</a></li>
+<li class="toc-entry toc-h2"><a href="#type-alias">Type Alias</a></li>
 </ul>
 </li>
 </ul><h1 id="types">
@@ -107,38 +108,38 @@ window.onload = wrap_img;
 <h2 id="generic-types">
 <a class="anchor" href="#generic-types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generic Types:</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class StackUnderflowException extends \Exception {}
+<div class="language-hack highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">StackUnderflowException</span> <span class="k">extends</span> <span class="err">\</span><span class="nc">Exception</span> <span class="p">{}</span>
 
-class Stack&lt;T&gt; {
-  private vec&lt;T&gt; $stack;
-  private int $stackPtr;
+<span class="kd">class</span> <span class="nc">Stack</span><span class="o">&lt;</span><span class="nc">T</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="k">private</span> <span class="kt">vec</span><span class="o">&lt;</span><span class="nc">T</span><span class="o">&gt;</span> <span class="nv">$stack</span><span class="p">;</span>
+  <span class="k">private</span> <span class="kt">int</span> <span class="nv">$stackPtr</span><span class="p">;</span>
 
-  public function __construct() {
-    $this-&gt;stackPtr = 0;
-    $this-&gt;stack = vec[];
-  }
+  <span class="k">public</span> <span class="k">function</span> <span class="n">__construct</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">stackPtr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">stack</span> <span class="o">=</span> <span class="k">vec</span><span class="p">[];</span>
+  <span class="p">}</span>
 
-  public function push(T $value): void {
-    $this-&gt;stack[] = $value;
-    $this-&gt;stackPtr++;
-  }
+  <span class="k">public</span> <span class="k">function</span> <span class="n">push</span><span class="p">(</span><span class="kt">T</span> <span class="nv">$value</span><span class="p">):</span> <span class="kt">void</span> <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">stack</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$value</span><span class="p">;</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">stackPtr</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
 
-  public function pop(): T {
-    if ($this-&gt;stackPtr &gt; 0) {
-      $this-&gt;stackPtr--;
-      return $this-&gt;stack[$this-&gt;stackPtr];
-    } else {
-      throw new StackUnderflowException();
-    }
-  }
-}
+  <span class="k">public</span> <span class="k">function</span> <span class="n">pop</span><span class="p">():</span> <span class="kt">T</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">stackPtr</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">stackPtr</span><span class="o">--</span><span class="p">;</span>
+      <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="n">stack</span><span class="p">[</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="n">stackPtr</span><span class="p">];</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nc">StackUnderflowException</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-function use_int_stack(Stack&lt;int&gt; $stInt): void {
-  $stInt-&gt;push(10);
-  $stInt-&gt;push(20);
-  $stInt-&gt;push(30);
-  echo 'pop =&gt; '.$stInt-&gt;pop()."\n";
-}
+<span class="k">function</span> <span class="n">use_int_stack</span><span class="p">(</span><span class="kt">Stack</span><span class="o">&lt;</span><span class="k">int</span><span class="o">&gt;</span> <span class="nv">$stInt</span><span class="p">):</span> <span class="kt">void</span> <span class="p">{</span>
+  <span class="nv">$stInt</span><span class="o">-&gt;</span><span class="nf">push</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+  <span class="nv">$stInt</span><span class="o">-&gt;</span><span class="nf">push</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+  <span class="nv">$stInt</span><span class="o">-&gt;</span><span class="nf">push</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+  <span class="k">echo</span> <span class="s1">'pop =&gt; '</span><span class="mf">.</span><span class="nv">$stInt</span><span class="o">-&gt;</span><span class="nf">pop</span><span class="p">()</span><span class="mf">.</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <h2 id="nullable-types">
@@ -146,14 +147,41 @@ function use_int_stack(Stack&lt;int&gt; $stInt): void {
 
 <p>A type ?Foo is either a value of type Foo, or null.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function takes_nullable_str2(?string $s): string {
-  if ($s is nonnull){
-    return $s;
-  } else {
-    return "default";
-  }
-}
+<div class="language-hack highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="n">takes_nullable_str2</span><span class="p">(</span><span class="kt">?string</span> <span class="nv">$s</span><span class="p">):</span> <span class="kt">string</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nv">$s</span> <span class="n">is</span> <span class="n">nonnull</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nv">$s</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="s2">"default"</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
+
+<h2 id="type-alias">
+<a class="anchor" href="#type-alias" aria-hidden="true"><span class="octicon octicon-link"></span></a>Type Alias</h2>
+<div class="language-hack highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">type</span> <span class="nc">Complex</span> <span class="o">=</span> <span class="nf">shape</span><span class="p">(</span><span class="s1">'real'</span> <span class="o">=&gt;</span> <span class="k">float</span><span class="p">,</span> <span class="s1">'imag'</span> <span class="o">=&gt;</span> <span class="k">float</span><span class="p">);</span>
+<span class="k">newtype</span> <span class="nc">Point</span> <span class="o">=</span> <span class="p">(</span><span class="k">float</span><span class="p">,</span> <span class="k">float</span><span class="p">);</span>
+
+<span class="k">function</span> <span class="n">create_Point</span><span class="p">(</span><span class="kt">float</span> <span class="nv">$x</span><span class="p">,</span> <span class="kt">float</span> <span class="nv">$y</span><span class="p">):</span> <span class="kt">Point</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nf">tuple</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span> <span class="nv">$y</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">function</span> <span class="n">distance</span><span class="p">(</span><span class="kt">Point</span> <span class="nv">$p1</span><span class="p">,</span> <span class="kt">Point</span> <span class="nv">$p2</span><span class="p">):</span> <span class="kt">float</span> <span class="p">{</span>
+  <span class="nv">$dx</span> <span class="o">=</span> <span class="nv">$p1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="nv">$p2</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+  <span class="nv">$dy</span> <span class="o">=</span> <span class="nv">$p1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="nv">$p2</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+  <span class="k">return</span> <span class="err">\</span><span class="nb">sqrt</span><span class="p">(</span><span class="nv">$dx</span><span class="o">*</span><span class="nv">$dx</span> <span class="o">+</span> <span class="nv">$dy</span><span class="o">*</span><span class="nv">$dy</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">newtype Counter as int = int;</code></p>
+
+<p>The presence of the type constraint as int allows the opaque type to be treated as if it had the type specified by that type constraint, which removes some of the alias’ opaqueness</p>
+
+<div class="language-hack highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">C</span> <span class="p">{</span>
+  <span class="k">const</span> <span class="no">type</span> <span class="no">T2</span> <span class="no">as</span> <span class="no">arraykey</span> <span class="o">=</span> <span class="k">int</span><span class="p">;</span>
+  <span class="mf">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>we have a class-specific type constant that is an alias, which allows a value of type T2 to be used in any context an arraykey is expected. After all, any int value is also an arraykey value.</p>
 
 
   </div><a class="u-url" href="/hacklang/2022/08/08/Hack-Lang.html" hidden></a>
