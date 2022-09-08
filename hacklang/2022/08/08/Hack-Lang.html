@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -96,6 +96,11 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#collections">Collections</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#cheat-sheet">Cheat Sheet</a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#types">Types</a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#generic-types">Generic Types:</a></li>
@@ -103,7 +108,29 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#type-alias">Type Alias</a></li>
 </ul>
 </li>
-</ul><h1 id="types">
+</ul><h1 id="collections">
+<a class="anchor" href="#collections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Collections</h1>
+<h2 id="cheat-sheet">
+<a class="anchor" href="#cheat-sheet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cheat Sheet</h2>
+<p>|OPERATION | VEC | DICT	| KEYSET |
+|-|-|-|-|
+|Initialize empty	|$v = vec[];|	$d = dict[];	|$k = keyset[];|
+|Literal|	$v = vec[1, 2, 3];	|$d = dict[‘foo’ =&gt; 1];	|$k = keyset[‘foo’, ‘bar’];|
+|From Another Container<em>|	$v = vec($container);	|$d = dict($keyed_container);	|$k = keyset($container); |
+|Keys from Container</em>	|$v = Vec\keys($container);|	N/A	|$k = Keyset\keys($container);|
+|Add Elements	|$v[] = 4;	|$d[‘baz’] = 2;	|$k[] = ‘baz’;|
+|Bulk Add Elements|	$v = Vec\concat($t1, $t2)|	$d = Dict\merge($kt1, $kt2)	|$k = Keyset\union($t1, $t2)|
+|Remove Elements|	Remove-at-index is unsupported; Vec\drop($v,$n), Vec\take($v,$n); $first=C\pop_front(inout $x), $last=C\pop_back(inout $x)	| unset($d[‘baz’]);	| unset($k[‘baz’]); |
+|Key Existence	| C\contains_key($v, 1)| 	C\contains_key($d, ‘foo’)	| C\contains_key($k, ‘foo’)|
+|Value Existence |	C\contains($v, 3) |	C\contains($d, 2)	| Use C\contains_key($k, ‘foo’) |
+|Equality (Order-Dependent)|	$v1 === $v2	|$d1 === $d2	|$k1 === $k2|
+|Equality (Order-Independent)	|N/A	|Dict\equal($d1, $d2)|	Keyset\equal($k1, $k2)|
+|Count Elements (i.e., length, size of array)|	C\count($v)	|C\count($d)|	C\count($k)|
+|Type Signature	|vec<tv>	|dict&lt;Tk, Tv&gt;	|keyset<tk>|
+|Type Refinement	|$v is vec&lt;_&gt;	|$d is dict&lt;_, _&gt;	|$k is keyset&lt;_&gt;|
+|Awaitable Consolidation|	Vec\from_async($v)|	Dict\from_async($d)|	Keyset\from_async($x)|</tk></tv></p>
+
+<h1 id="types">
 <a class="anchor" href="#types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Types</h1>
 <h2 id="generic-types">
 <a class="anchor" href="#generic-types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generic Types:</h2>
