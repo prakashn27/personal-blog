@@ -2,6 +2,17 @@
   
     
         "post0": {
+            "title": "Hack Lang Notes",
+            "content": "Types . Generic Types: . class StackUnderflowException extends Exception {} class Stack&lt;T&gt; { private vec&lt;T&gt; $stack; private int $stackPtr; public function __construct() { $this-&gt;stackPtr = 0; $this-&gt;stack = vec[]; } public function push(T $value): void { $this-&gt;stack[] = $value; $this-&gt;stackPtr++; } public function pop(): T { if ($this-&gt;stackPtr &gt; 0) { $this-&gt;stackPtr--; return $this-&gt;stack[$this-&gt;stackPtr]; } else { throw new StackUnderflowException(); } } } function use_int_stack(Stack&lt;int&gt; $stInt): void { $stInt-&gt;push(10); $stInt-&gt;push(20); $stInt-&gt;push(30); echo &#39;pop =&gt; &#39;.$stInt-&gt;pop().&quot; n&quot;; } . Nullable Types . A type ?Foo is either a value of type Foo, or null. . function takes_nullable_str2(?string $s): string { if ($s is nonnull){ return $s; } else { return &quot;default&quot;; } } .",
+            "url": "https://www.prakashn.com/hacklang/2022/08/08/Hack-Lang.html",
+            "relUrl": "/hacklang/2022/08/08/Hack-Lang.html",
+            "date": " • Aug 8, 2022"
+        }
+        
+    
+  
+    
+        ,"post1": {
             "title": "DynamoDB Quick Reference",
             "content": "Intro . Hosted, scalable database service by Amazon with the data stored in Amazons cloud. | Infinitely scalable, with minimal provisioning. | Managed, closed source DB. | Key-value, schema less DB. | ACID complaint. | Replication: Peer-based, master-master replication (though it is managed by AWS) | Concurrency: Vector Clocks | Sharding: Yes | ✅ Main Differentiator: Highly Available | ❌ Query-ability : table needs to be designed based on access pattern, as it gets difficult to change in the end. | AWS:aws.amazon.com/­dynamodb | Db-engines link | . Data Types . Scalar Data Types . Type Symbol Description JSON Example . String | S | typical string | &quot;S&quot;: &quot;this is a string&quot; | . Number | N | Any int or float | &quot;N&quot;: &quot;98&quot;, &quot;N&quot;:&quot;3.141592&quot; | . Binary | B | Base64 encoded binary data | &quot;B&quot;: &quot;nwaafrafs&quot; | . Boolean | BOOL | true or false | &quot;BOOL&quot;: false | . Null | NULL | use for missing values | &quot;NULL&quot;: true | . Set and Document Data Types . Type Symbol Description JSON Example . String Set | SS | Set of string | “SS”: [“Prakash”, “Natarajan”] | . Number Set | NS | Set of numbers | “NS”: [“1”, “2”] | . Binary Set | BS | Set of Binary | “BS”: [“wsfawefa===”] | . List | L | List that can consist of any scalar type | “L” : [{“S”:”prakash”},{“N”:”1”}] | . Map | M | key-value store with string as keys and any scalar as value | “M”:{“key”:{“S”:”value”}} | . Key Types . 1) Partition key (hash key) 2) Composite Key (partition key + Sort key) . Indexes . Local Secondary Index . same (partition) hash key, different sort key. | need to be created at table creation | . Global Secondary Index: . Any column. | can be created and deleted anytime. | Pay for storage for that index. | .",
             "url": "https://www.prakashn.com/db/aws/nosql/2022/08/07/DynamoDB-Quick-Reference.html",
