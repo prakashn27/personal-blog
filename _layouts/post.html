@@ -71,6 +71,7 @@ layout: default
   <script>
     console.log('title:');
     console.log(`{{page.title}}`);
+    var $ = jQuery.noConflict();
     $(function() {
       $(".heart").on("click", function() {
         $(this).toggleClass("is-active");
