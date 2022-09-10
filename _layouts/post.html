@@ -12,9 +12,6 @@ layout: default
         <p class="page-description">{{ page.description }}</p>
       {%- endif -%}
     {%- endif -%}
-    <div class="placement">
-      <div class="heart"></div>
-    </div>
     <p class="post-meta post-meta-title">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
@@ -71,11 +68,6 @@ layout: default
   <script>
     console.log('title:');
     console.log(`{{page.title}}`);
-    var $ = jQuery.noConflict();
-    $(function() {
-      $(".heart").on("click", function() {
-        $(this).toggleClass("is-active");
-      });
-    });
+    
   </script>
 </article>
