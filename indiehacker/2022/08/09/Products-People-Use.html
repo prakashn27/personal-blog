@@ -146,6 +146,7 @@ eg. Bluetooth headset -solves the pain of handling wires.</li>
   <script>
     console.log('title:');
     console.log(`Products People Buy`);
+    var $ = jQuery.noConflict();
     $(function() {
       $(".heart").on("click", function() {
         $(this).toggleClass("is-active");

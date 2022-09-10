@@ -318,6 +318,7 @@ window.onload = wrap_img;
   <script>
     console.log('title:');
     console.log(`Hack Lang Notes`);
+    var $ = jQuery.noConflict();
     $(function() {
       $(".heart").on("click", function() {
         $(this).toggleClass("is-active");
