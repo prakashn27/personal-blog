@@ -52,6 +52,8 @@ window.onload = wrap_img;
     elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
     });
 </script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" />
+  
 </head>
 <body><header class="site-header">
 
@@ -73,7 +75,10 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Hack Lang Notes</h1><p class="page-description">Notes on Hack Lang</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-08T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Hack Lang Notes</h1><p class="page-description">Notes on Hack Lang</p><div class="placement">
+      <div class="heart"></div>
+    </div>
+    <p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-08T00:00:00-05:00" itemprop="datePublished">
         Aug 8, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -313,6 +318,11 @@ window.onload = wrap_img;
   <script>
     console.log('title:');
     console.log(`Hack Lang Notes`);
+    $(function() {
+      $(".heart").on("click", function() {
+        $(this).toggleClass("is-active");
+      });
+    });
   </script>
 </article>
 
