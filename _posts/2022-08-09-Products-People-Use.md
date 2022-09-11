@@ -27,3 +27,9 @@ eg. home monitoring system, All features which sales man pitches.
 
 ## 5. This will make me more money
 eg. Tractor for farming, Good Laptop for software engineer.
+
+## 6. This will save me more money
+
+
+## 7. This will save me time
+eg. spreadsheets saves time for basic calculations
