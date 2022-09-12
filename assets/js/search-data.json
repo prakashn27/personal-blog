@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Pipes Pattern",
-            "content": "Pros: . Reusability of code (or module) | Performance (large CPU bound tasks can be alloted Large CPU bound machines - vertical scaling) | Scalability (if a certain task takes more time to process, we can horizondally scale to meet the needs) | . Cons: . Difficult to Debug | . Reference: . Azure Architecture .",
+            "content": "Pros . Reusability of code (or module) | Performance (large CPU bound tasks can be alloted Large CPU bound machines - vertical scaling) | Scalability (if a certain task takes more time to process, we can horizondally scale to meet the needs) | . Cons . Difficult to Debug | . Reference . Azure Architecture . Warning: Work in Progress doc . TODO: * add diagram * add problem, solution parts. .",
             "url": "https://www.prakashn.com/architecture/2022/08/12/Pipes-Pattern.html",
             "relUrl": "/architecture/2022/08/12/Pipes-Pattern.html",
             "date": " • Aug 12, 2022"
