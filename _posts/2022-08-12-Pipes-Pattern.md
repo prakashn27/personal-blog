@@ -7,13 +7,20 @@ title: Pipes Pattern
 comments: false
 ---
 
-# Pros:
+# Pros
 * Reusability of code (or module)
 * Performance (large CPU bound tasks can be alloted Large CPU bound machines - vertical scaling)
 * Scalability (if a certain task takes more time to process, we can horizondally scale to meet the needs)
 
-# Cons:
+# Cons
 * Difficult to Debug
 
-# Reference:
+# Reference
 [Azure Architecture](https://docs.microsoft.com/en-us/azure/architecture/patterns/pipes-and-filters)
+
+> Warning: Work in Progress doc
+```
+TODO:
+* add diagram
+* add problem, solution parts.
+```
