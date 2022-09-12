@@ -34,10 +34,3 @@ and Task B is small task and does not require that much compute, we can use Serv
 
 # Reference
 [Azure Architecture](https://docs.microsoft.com/en-us/azure/architecture/patterns/pipes-and-filters)     
-
-> Warning: Work in Progress doc
-```
-TODO:
-* add diagram
-* add problem, solution parts.
-```
