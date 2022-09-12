@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description: Some Characteristics of successfull products
+description: Some characteristics of successful products
 categories: [indiehacker]
 title: Products People Buy
 comments: true
