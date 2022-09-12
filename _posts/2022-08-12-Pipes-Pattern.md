@@ -14,7 +14,7 @@ Let take one example about Netflix. In order to support wide variety of encoding
 
 # Solution
 
-![](https://user-images.githubusercontent.com/3127498/189771485-09a35f2a-55b3-45f2-afd5-7824fd41a601.png
+![](https://user-images.githubusercontent.com/3127498/189771485-09a35f2a-55b3-45f2-afd5-7824fd41a601.png)
 
 Here a complex process is splitup into small individual process. 
 Let assume that Task A is CPU Intesive, so we can put it in a large machine to make it faster. 
