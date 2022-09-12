@@ -22,6 +22,7 @@ and Task B is small task and does not require that much compute, we can use Serv
 
 ![](https://user-images.githubusercontent.com/3127498/189771465-318d0953-1e2f-489d-ac3f-5328b914414c.png)
 
+To make it **event driven **, we can use queues in between all the tasks, thereby acheiving segregation between each modules. 
 
 # Why    
 ## Pros     
