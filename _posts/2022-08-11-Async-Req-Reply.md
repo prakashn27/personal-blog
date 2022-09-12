@@ -13,9 +13,9 @@ Typically frontend expects response to be immediate (less than few seconds), but
 # Solution    
 One way to handle this to make backend asynchrous and do HTTP long polling from the front end. 
 
-1) Make the server async to accept any number of jobs.
-2) Offload the time consuming part to a worker
-3) Periodically check from client if worker has finished the request
+1) Make the server async to accept any number of jobs.    
+2) Offload the time consuming part to a worker.     
+3) Periodically check from client if worker has finished the request.      
 
 ![](https://user-images.githubusercontent.com/3127498/189568631-93f2e2fc-c61a-4755-b6c0-1058088423bb.png)
 
