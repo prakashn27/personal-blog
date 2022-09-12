@@ -25,6 +25,6 @@ One way to handle this to make backend asynchrous and do HTTP long polling from 
 * We can also use **[Server-sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)**. This is **not a bidirectional** connection. We can send events only from the server. Typical use of this technology is in **stock tickers**
 
 
-# References:
+# References
 * [Http Polling Issues](https://datatracker.ietf.org/doc/html/rfc6202#section-2.1)          
 * [Azure Architecure Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/async-request-reply)
