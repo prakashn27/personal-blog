@@ -2,6 +2,17 @@
   
     
         "post0": {
+            "title": "Asynchronours Request-Reply Pattern",
+            "content": "Problem: . Typically frontend expects response to be immediate (less than few seconds), but sometimes backend might take more time than expected. In these cases, requests would be timed out (AWS API Gateway has 30 seconds timeout). . Solution: . One way to handle this to make backend asynchrous and do long polling from the front end. .",
+            "url": "https://www.prakashn.com/indiehacker/2022/08/11/Async-Req-Reply.html",
+            "relUrl": "/indiehacker/2022/08/11/Async-Req-Reply.html",
+            "date": " • Aug 11, 2022"
+        }
+        
+    
+  
+    
+        ,"post1": {
             "title": "Products People Buy",
             "content": "1. This solves my pain . Pain can be portrayed in many dimentions: . time | distance | cost eg. GitHub - solves pain of managing versioning of code. eg. Bluetooth headset -solves the pain of handling wires. | . 2. This connects me to community . eg. Meta, Instagram, WhatsApp, Reddit . 3. This makes my life easier . eg. WhatsApp , makes easy to be in touch with anyone in the world. . 4. This feels luxurious . eg. home monitoring system, All features which sales man pitches. . 5. This will make me more money . eg. Tractor for farming, Good Laptop for software engineer. . 6. This will save me more money . 7. This will save me time . eg. spreadsheets saves time for basic calculations .",
             "url": "https://www.prakashn.com/indiehacker/2022/08/09/Products-People-Use.html",
@@ -12,7 +23,7 @@
     
   
     
-        ,"post1": {
+        ,"post2": {
             "title": "Hack Lang Notes",
             "content": "Collections . Cheat Sheet . OPERATION VEC DICT KEYSET . Initialize empty | $v = vec[]; | $d = dict[]; | $k = keyset[]; | . Literal | $v = vec[1, 2, 3]; | $d = dict[‘foo’ =&gt; 1]; | $k = keyset[‘foo’, ‘bar’]; | . From Another Container* | $v = vec($container); | $d = dict($keyed_container); | $k = keyset($container); | . Keys from Container* | $v = Vec keys($container); | N/A | $k = Keyset keys($container); | . Add Elements | $v[] = 4; | $d[‘baz’] = 2; | $k[] = ‘baz’; | . Bulk Add Elements | $v = Vec concat($t1, $t2) | $d = Dict merge($kt1, $kt2) | $k = Keyset union($t1, $t2) | . Remove Elements | Remove-at-index is unsupported; Vec drop($v,$n), Vec take($v,$n); $first=C pop_front(inout $x), $last=C pop_back(inout $x) | unset($d[‘baz’]); | unset($k[‘baz’]); | . Key Existence | C contains_key($v, 1) | C contains_key($d, ‘foo’) | C contains_key($k, ‘foo’) | . Value Existence | C contains($v, 3) | C contains($d, 2) | Use C contains_key($k, ‘foo’) | . Equality (Order-Dependent) | $v1 === $v2 | $d1 === $d2 | $k1 === $k2 | . Equality (Order-Independent) | N/A | Dict equal($d1, $d2) | Keyset equal($k1, $k2) | . Count Elements (i.e., length, size of array) | C count($v) | C count($d) | C count($k) | . Type Signature | vec | dict&lt;Tk, Tv&gt; | keyset | . Type Refinement | $v is vec | $d is dict&lt;_, _&gt; | $k is keyset | . Awaitable Consolidation | Vec from_async($v) | Dict from_async($d) | Keyset from_async($x) | . Types . Generic Types: . class StackUnderflowException extends Exception {} class Stack&lt;T&gt; { private vec&lt;T&gt; $stack; private int $stackPtr; public function __construct() { $this-&gt;stackPtr = 0; $this-&gt;stack = vec[]; } public function push(T $value): void { $this-&gt;stack[] = $value; $this-&gt;stackPtr++; } public function pop(): T { if ($this-&gt;stackPtr &gt; 0) { $this-&gt;stackPtr--; return $this-&gt;stack[$this-&gt;stackPtr]; } else { throw new StackUnderflowException(); } } } function use_int_stack(Stack&lt;int&gt; $stInt): void { $stInt-&gt;push(10); $stInt-&gt;push(20); $stInt-&gt;push(30); echo &#39;pop =&gt; &#39;.$stInt-&gt;pop().&quot; n&quot;; } . Nullable Types . A type ?Foo is either a value of type Foo, or null. . function takes_nullable_str2(?string $s): string { if ($s is nonnull){ return $s; } else { return &quot;default&quot;; } } . Type Alias . type Complex = shape(&#39;real&#39; =&gt; float, &#39;imag&#39; =&gt; float); newtype Point = (float, float); function create_Point(float $x, float $y): Point { return tuple($x, $y); } function distance(Point $p1, Point $p2): float { $dx = $p1[0] - $p2[0]; $dy = $p1[1] - $p2[1]; return sqrt($dx*$dx + $dy*$dy); } . newtype Counter as int = int; . The presence of the type constraint as int allows the opaque type to be treated as if it had the type specified by that type constraint, which removes some of the alias’ opaqueness . class C { const type T2 as arraykey = int; ... } . we have a class-specific type constant that is an alias, which allows a value of type T2 to be used in any context an arraykey is expected. After all, any int value is also an arraykey value. . Inheritance . Sealed classes . only classes mentioned in &lt;__Sealed&gt; are able to extend .",
             "url": "https://www.prakashn.com/hacklang/2022/08/08/Hack-Lang.html",
@@ -23,7 +34,7 @@
     
   
     
-        ,"post2": {
+        ,"post3": {
             "title": "DynamoDB Quick Reference",
             "content": "Intro . Hosted, scalable database service by Amazon with the data stored in Amazons cloud. | Infinitely scalable, with minimal provisioning. | Managed, closed source DB. | Key-value, schema less DB. | ACID complaint. | Replication: Peer-based, master-master replication (though it is managed by AWS) | Concurrency: Vector Clocks | Sharding: Yes | ✅ Main Differentiator: Highly Available | ❌ Query-ability : table needs to be designed based on access pattern, as it gets difficult to change in the end. | AWS:aws.amazon.com/­dynamodb | Db-engines link | . Data Types . Scalar Data Types . Type Symbol Description JSON Example . String | S | typical string | &quot;S&quot;: &quot;this is a string&quot; | . Number | N | Any int or float | &quot;N&quot;: &quot;98&quot;, &quot;N&quot;:&quot;3.141592&quot; | . Binary | B | Base64 encoded binary data | &quot;B&quot;: &quot;nwaafrafs&quot; | . Boolean | BOOL | true or false | &quot;BOOL&quot;: false | . Null | NULL | use for missing values | &quot;NULL&quot;: true | . Set and Document Data Types . Type Symbol Description JSON Example . String Set | SS | Set of string | “SS”: [“Prakash”, “Natarajan”] | . Number Set | NS | Set of numbers | “NS”: [“1”, “2”] | . Binary Set | BS | Set of Binary | “BS”: [“wsfawefa===”] | . List | L | List that can consist of any scalar type | “L” : [{“S”:”prakash”},{“N”:”1”}] | . Map | M | key-value store with string as keys and any scalar as value | “M”:{“key”:{“S”:”value”}} | . Key Types . 1) Partition key (hash key) 2) Composite Key (partition key + Sort key) . Indexes . Local Secondary Index . same (partition) hash key, different sort key. | need to be created at table creation | . Global Secondary Index: . Any column. | can be created and deleted anytime. | Pay for storage for that index. | .",
             "url": "https://www.prakashn.com/db/aws/nosql/2022/08/07/DynamoDB-Quick-Reference.html",
