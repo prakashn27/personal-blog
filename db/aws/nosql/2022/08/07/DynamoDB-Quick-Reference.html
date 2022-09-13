@@ -122,6 +122,11 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h2"><a href="#scalar-data-types">Scalar Data Types</a></li>
 <li class="toc-entry toc-h2"><a href="#set-and-document-data-types">Set and Document Data Types</a></li>
+<li class="toc-entry toc-h2"><a href="#internal">Internal:</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#hot-spots">Hot spots</a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#key-types">Key Types</a></li>
 </ul>
 </li>
@@ -242,6 +247,25 @@ window.onload = wrap_img;
   </tbody>
 </table>
 
+<h2 id="internal">
+<a class="anchor" href="#internal" aria-hidden="true"><span class="octicon octicon-link"></span></a>Internal:</h2>
+
+<ul>
+  <li>Partition based schema
+    <ul>
+      <li>performs best when access to partition keys is balanced.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="hot-spots">
+<a class="anchor" href="#hot-spots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hot spots</h3>
+<ul>
+  <li>degrade performance and should be avoided.</li>
+  <li>partition key should not be clustered around few values.</li>
+  <li>composite key: aim for fewer partition keys and more range keys.</li>
+</ul>
+
 <h2 id="key-types">
 <a class="anchor" href="#key-types" aria-hidden="true"><span class="octicon octicon-link"></span></a>Key Types</h2>
 
@@ -262,7 +286,7 @@ window.onload = wrap_img;
 <a class="anchor" href="#global-secondary-index" aria-hidden="true"><span class="octicon octicon-link"></span></a>Global Secondary Index:</h2>
 <ul>
   <li>Any column.</li>
-  <li>can be created and deleted anytime.</li>
+  <li>can be created and modified anytime.</li>
   <li>Pay for storage for that index.</li>
 </ul>
 
