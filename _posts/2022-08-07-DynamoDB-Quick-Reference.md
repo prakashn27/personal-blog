@@ -44,6 +44,15 @@ comments: true
 | List | L | List that can consist of any scalar type  | "L" : [{"S":"prakash"},{"N":"1"}]|
 | Map | M | key-value store with string as keys and any scalar as value  | "M":{"key":{"S":"value"}}| 
 
+## Internal:
+
+- Partition based schema
+    - performs best when access to partition keys is balanced.
+    
+### Hot spots
+- degrade performance and should be avoided.
+- partition key should not be clustered around few values.
+- composite key: aim for fewer partition keys and more range keys.
 
 ## Key Types
 
@@ -59,7 +68,8 @@ comments: true
 
 ## Global Secondary Index:
 * Any column.
-* can be created and deleted anytime.
+* can be created and modified anytime.
 * Pay for storage for that index.
+
 
 
